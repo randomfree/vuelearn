@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <li v-for="site in sites">{{site.name}}</li>
+            <li>-----------------------------------</li>
+        </ol>
+        <ul>
+            <li v-for="value in object">{{value}}</li>
+        </ul>
+        <ul>
+            <li v-for="(value,key,index) in object">{{index}}.{{key}}:{{value}}</li>
+        </ul>
+        <ul>
+            <li v-for="n in 10">{{n}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                sites:[
+                    {name:'aaaa'},
+                    {name:'bbbb'},
+                    {name:'cccc'}
+                ],
+                object:{
+                    name:'cainiao',
+                    url:'http://www.baidu.com',
+                    slogan:'shawanyi'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

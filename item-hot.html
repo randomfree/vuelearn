@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="newlist_item.css">
+    <style>
+        .item {
+            height: auto;
+            width: 100%;
+            border: 1px red solid;
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            height: 100%;
+            flex: 1;
+        }
+
+        .right_img {
+            height: 160px;
+            width: 219px;
+            margin: 10 20 30 40;
+            
+        }
+
+     
+        .title{
+
+            width: 350px;
+            margin-left: 20px;
+            margin-top: 2rem;
+            margin-bottom: 0px;
+            font-size: 2rem;
+            align-self: flex-start;
+            word-wrap: break-word;
+
+        }
+        .datediv{
+            margin-left: 20px;
+            align-self: flex-end;
+        }
+        .datediv span:nth-of-type(2),.datediv span:nth-of-type(3){
+            color: #686868;
+            font-size: 1.5rem;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+        <div class="content">
+            <p class="title">adsffadsf</p>
+
+            <div class="datediv">
+                <span class="ishot">{{ishot_label}}</span>
+                <span class="source">{{source}}</span>
+                <span class="date">{{date}}</span>
+            </div>
+        </div>
+
+        <img src="img/img.jpeg" class="right_img">
+
+    </div>
+</body>
+
+</html>

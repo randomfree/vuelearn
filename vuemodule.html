@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>  
+    <div id="app">
+        <label for="r1">修改颜色</label><input type="checkbox" v-model="class1" id="r1">
+        <br>
+        <div v-bind:class="{'class1':class1}">
+            directiva v-bind:class
+        </div>
+        
+        {{5+5}}<br>
+        {{ok?'YES':'NO'}}<br>
+        {{message.split('').reverse().join('')}}
+        <div v-bind:id="'list-'+id">listid</div>
+
+        <!-- <div v-html="message"></div> -->
+        <pre><a v-bind:href="url">可以改变的a</a></pre>
+
+        {{message | capitalize}}
+
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                ok:true,
+                message:'aaaa',
+                class1:false,
+                id:1,
+                url:'http://www.baidu.com',
+            },
+            filters:{
+                capitalize:function(value){
+                    if(!value) return '';
+                    value = value.toString();
+                    return value.charAt(0).toUpperCase()+value.slice(1);
+                }
+            }
+
+        })
+    </script>
+
+</body>
+</html>

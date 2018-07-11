@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>自定义指令</title>
+</head>
+<body>
+    <div id="app">
+        <p>页面载入时,input 元素自动获取焦点:</p>
+        <input v-focus>
+
+    </div>
+
+    <script>
+        // 全局注册
+        Vue.directive('focus',{
+            //当标记了v-focus的元素inserted也就是插入了之后做了el.focus的操作也就是获取焦点
+            inserted:function(el){
+                el.focus()
+            }
+        })
+        new Vue({
+            el:'#app',
+            //局部注册
+            directives:{
+                focus:{
+                    inserted:function(el){
+                        el.focus()
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

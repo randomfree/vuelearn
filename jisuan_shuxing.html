@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{message.split('').reverse().join('')}}
+        <p>原始字符串:{{message}}</p>
+        <p>计算后反转字符串:{{reversedMessage}}</p>
+        {{site}}
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                message:'Runoob!',
+                name:'Google',
+                url:'http://www.google.com',
+            },
+            computed:{
+                reversedMessage:function(){
+                    return this.message.split('').reverse().join('')
+                },
+                site:{
+                    //getter
+                    get:function(){
+                        return this.name+' '+this.url
+                    },
+                    set:function(newValue){
+                        var names = newValue.split(' ')
+                        this.name = names[0]
+                        this.url = names[names.length - 1]
+                    }
+                }
+            }
+        })
+
+        vm.site = 'cainiao haishicainiao';
+        document.write('name: '+vm.name);
+        document.write('<br>');
+        document.write('url: '+vm.url);
+    </script>
+</body>
+</html>

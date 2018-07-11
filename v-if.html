@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-if='sceen'>现在你看到我了</p>
+        <template v-if='ok'>
+            <h1>cainiao</h1>
+            <p>xia b xue</p>
+            <p>hahaha</p>
+        </template>
+
+        <div v-if="Math.random()>0.5">
+            Sorry
+        </div>
+        <div v-else>
+            Not sorry
+        </div>
+
+        <div v-if="type ==='A'">A</div>
+        <div v-else-if="type === 'B'">B</div>
+        <div v-else-if="type === 'C'">C</div>
+        <div v-else>Not A,B,C</div>
+
+        <h1 v-show = "ok">hello</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                sceen:true,
+                ok:true,
+                type:'A',
+            }
+        })
+    </script>
+</body>
+</html>
